@@ -23,13 +23,13 @@ export interface ContainerProps
   asChild?: boolean;
 }
 
-const Container: React.FC<ContainerProps> = ({
+const Container = ({
   asChild,
   className,
   children,
   variant,
   ...props
-}) => {
+}: ContainerProps) => {
   const Comp = asChild ? React.Fragment : "div";
   const containerClasses = cn(containerVariants({ variant }), className);
 

@@ -8,28 +8,6 @@ interface ProviderProps {
   children: React.ReactNode;
 }
 
-// const Provider = ({ children }: ProviderProps) => {
-//   const [queryClient] = useState<QueryClient>(
-//     () =>
-//       new QueryClient({
-//         defaultOptions: {
-//           queries: {
-//             staleTime: 60 * 1000,
-//             refetchInterval: 60 * 1000,
-//           },
-//         },
-//       })
-//   );
-//   return (
-//     <QueryClientProvider client={queryClient}>
-//       <ReactQueryDevtools initialIsOpen={false} />
-//       {children}
-//     </QueryClientProvider>
-//   );
-// };
-
-// export default Provider;
-
 function makeQueryClient() {
   return new QueryClient({
     defaultOptions: {
@@ -38,6 +16,7 @@ function makeQueryClient() {
         // above 0 to avoid refetching immediately on the client
         staleTime: 60 * 1000,
         refetchInterval: 60 * 1000,
+        refetchOnMount: "always",
       },
     },
   });

@@ -56,7 +56,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <>
+    <div className="max-w-5xl mx-auto">
       <div className="flex items-center py-4">
         <Input
           placeholder="Search"
@@ -117,6 +117,6 @@ export function DataTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-    </>
+    </div>
   );
 }

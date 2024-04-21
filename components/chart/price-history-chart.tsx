@@ -19,12 +19,6 @@ const PriceHistoryChart = ({ coinId }: PriceHistoryChartProps) => {
   }, [coinId]);
 
   const option: EChartsOption = {
-    title: {
-      text: `${coinId.charAt(0).toUpperCase() + coinId.slice(1)} Price History`,
-      textStyle: {
-        color: "#ffff",
-      },
-    },
     tooltip: {
       trigger: "axis",
       axisPointer: {
@@ -93,7 +87,10 @@ const PriceHistoryChart = ({ coinId }: PriceHistoryChartProps) => {
 
   return (
     <div className="my-20">
-      <ReactECharts option={option} style={{ height: 400, width: "100%" }} />
+      <h3 className="max-w-5xl mx-auto">
+        {coinId.charAt(0).toUpperCase() + coinId.slice(1)} Price History
+      </h3>
+      <ReactECharts option={option} style={{ height: 500, width: "100%" }} />
     </div>
   );
 };

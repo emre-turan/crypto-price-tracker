@@ -15,7 +15,6 @@ export async function getChartData(
       throw new Error(`Failed to fetch chart data: ${response.status}`);
     }
     const data = await response.json();
-    console.log(">>ChartData", data);
     return data.prices.map((price: [number, number]) => ({
       timestamp: price[0],
       value: price[1],
