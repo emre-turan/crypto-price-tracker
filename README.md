@@ -86,7 +86,10 @@ These strategies are implemented to ensure that the application is robust, perfo
 ### Commit History
 
 - It's very important to have a clean commit history. I always try to keep my commits clean and meaningful. I also use the conventional commit messages to keep the commit history clean and understandable. But, for this challenge, I'm not following the conventional commit messages due to time constraints. I'm just writing the commit messages as I go. I'm sorry for that.
--
+
+### Warning about API
+
+- Due to nature of the API, it's not always possible to fetch the data. Sometimes, the API returns the 429 status code which means the rate limit exceeded. In this case, I'm displaying the error message to the user. Please be aware of this issue.
 
 ### Conclusion
 

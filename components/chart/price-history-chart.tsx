@@ -49,6 +49,7 @@ const PriceHistoryChart = ({ coinId }: PriceHistoryChartProps) => {
         lineStyle: {
           type: "dashed",
           width: 0.3,
+          color: "#999",
         },
       },
     },
@@ -87,11 +88,17 @@ const PriceHistoryChart = ({ coinId }: PriceHistoryChartProps) => {
   };
 
   return (
-    <div className="my-20">
+    <div className="my-24 pb-20">
       <h3 className="max-w-5xl mx-auto">
         {coinId.charAt(0).toUpperCase() + coinId.slice(1)} Price History
       </h3>
-      <ReactECharts option={option} style={{ height: 500, width: "100%" }} />
+      {chartData.length > 0 ? (
+        <ReactECharts option={option} style={{ height: 500, width: "100%" }} />
+      ) : (
+        <div className="text-center">
+          No data available for now. Please try again later.
+        </div>
+      )}
     </div>
   );
 };
