@@ -7,6 +7,7 @@ import { ArrowUpDown } from "lucide-react";
 
 import { Button } from "../ui/button";
 import TrackCoin from "./track-coin";
+import PriceChange from "./price-change";
 
 export type CryptoCurrencyPrice = {
   id: string;
@@ -51,12 +52,7 @@ export const columns: ColumnDef<CryptoCurrencyPrice>[] = [
       );
     },
     cell: ({ row }) => (
-      <span>
-        {row.original.current_price.toLocaleString("en-US", {
-          style: "currency",
-          currency: "USD",
-        })}
-      </span>
+      <PriceChange currentPrice={row.original.current_price} />
     ),
   },
   {

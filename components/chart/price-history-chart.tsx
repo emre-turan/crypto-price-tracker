@@ -54,6 +54,7 @@ const PriceHistoryChart = ({ coinId }: PriceHistoryChartProps) => {
     },
     series: [
       {
+        name: "Price",
         data: chartData.map((item) => [item.timestamp, item.value]),
         type: "line",
         itemStyle: {

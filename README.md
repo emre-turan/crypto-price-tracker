@@ -52,19 +52,19 @@ I designed this project to ensure that users always have access to the most up-t
 
 ## Data Fetching and Caching Strategy
 
-### 1. Fetch with `cache: 'no-store'`
+### Fetch with `cache: 'no-store'`
 
 - **Purpose**: Ensures that data is fetched a new on each request.
 - **Why**: This is crucial for displaying the most current data to our users. It mimics the behavior of `getServerSideProps`, where data is fetched server-side for each request, ensuring that users see the latest information without any cached delays. When building the application statically on deployment, with `no-cache`, the data will be fetched on each request, providing real-time data to users. This strategy is particularly useful for applications that require up-to-date information, such as financial data, news feeds, or real-time analytics.
 
-### 2. SSR for Initial Load
+### SSR for Initial Load
 
 - **Purpose**: Utilizes SSR to fetch data on the server for the initial page load.
 - **Why**: This improves the initial load time (time to first paint) and enhances SEO by serving fully rendered pages to search engines. It provides a faster, more seamless user experience and helps in ranking the site better on search platforms.
 
 But how do we ensure that the data is always up-to-date? After the first load, the client-side hydration and updates take over to keep the data fresh and interactive. For this, we use TansStack Query for data management on the client-side.
 
-### 3. Client-side Hydration and Updates
+### Client-side Hydration and Updates
 
 - **Purpose**: After the initial server-side fetch, the React application is hydrated on the client. With TanStack Query, we manage the data on the client-side, fetching updates as needed. I set the refetch interval to 60 seconds to fetch the data from the server. This can be adjustable according to the requirements. Because this choice might can cause the performance issues with larger applications. But for this application, I think it's okay.
 
@@ -82,3 +82,12 @@ These strategies are implemented to ensure that the application is robust, perfo
 ### Talk About the Theme
 
 - Yeah, I love the dark theme. However, not everyone loves it. Therefore, I incorporated a theme switcher into the application. Users can easily switch between light and dark themes. I utilize the `useTheme` hook from `next-themes` to handle the theme. The theme is saved in local storage, ensuring it persists even if the user refreshes the page. Additionally, I included a theme switcher in the navbar (kinda) for convenient access.
+
+### Commit History
+
+- It's very important to have a clean commit history. I always try to keep my commits clean and meaningful. I also use the conventional commit messages to keep the commit history clean and understandable. But, for this challenge, I'm not following the conventional commit messages due to time constraints. I'm just writing the commit messages as I go. I'm sorry for that.
+-
+
+### Conclusion
+
+I hope you find this project interesting and that it meets your expectations. I enjoyed working on it and implementing the various features. I look forward to hearing your feedback and any suggestions you may have. Thank you for the opportunity, and I hope to hear from you soon!
