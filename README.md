@@ -41,7 +41,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - **TypeScript**
 - **Shadcn UI Library**
 - **Next.js**
-- **React Query**
+- **Tanstack Query**
+- **Tanstack Table**
+- **Echarts**
 - **Tailwind CSS**
 - **ESLint & Prettier**
 - **Git**
