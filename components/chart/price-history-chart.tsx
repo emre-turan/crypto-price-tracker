@@ -4,18 +4,17 @@ import React, { useEffect, useState } from "react";
 import ReactECharts from "echarts-for-react";
 import { EChartsOption } from "echarts";
 import { CryptoCurrencyHistory, getChartData } from "@/actions/get-chart-data";
+import { SelectCoin } from "./select-coin";
 
-interface PriceHistoryChartProps {
-  coinId: string;
-}
-
-const PriceHistoryChart = ({ coinId }: PriceHistoryChartProps) => {
+const PriceHistoryChart = () => {
+  const defaultCoin = "bitcoin";
+  const [coinId, setCoinId] = useState<string>(defaultCoin);
   const [chartData, setChartData] = useState<CryptoCurrencyHistory[]>([]);
 
   useEffect(() => {
-    getChartData(coinId).then((data) => {
-      setChartData(data);
-    });
+    if (coinId) {
+      getChartData(coinId).then(setChartData);
+    }
   }, [coinId]);
 
   const option: EChartsOption = {
@@ -92,6 +91,9 @@ const PriceHistoryChart = ({ coinId }: PriceHistoryChartProps) => {
       <h3 className="max-w-5xl mx-auto">
         {coinId.charAt(0).toUpperCase() + coinId.slice(1)} Price History
       </h3>
+      <div className="flex max-w-5xl mx-auto justify-end py-3">
+        <SelectCoin defaultCoin={defaultCoin} onSelect={setCoinId} />
+      </div>
       {chartData.length > 0 ? (
         <ReactECharts option={option} style={{ height: 500, width: "100%" }} />
       ) : (

@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section id="hero" aria-label="Hero" className="py-10">
       <Container>
-        <div className="flex justify-end mb-2">
+        <div className="flex justify-end max-w-5xl mx-auto mb-2">
           <ModeToggle />
         </div>
         <h1 className="text-center">Crypto Price Tracker App</h1>

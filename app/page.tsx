@@ -24,7 +24,7 @@ export default async function Home() {
         <HydrationBoundary state={dehydrate(queryClient)}>
           <DataTable columns={columns} />
         </HydrationBoundary>
-        <PriceHistoryChart coinId="bitcoin" />
+        <PriceHistoryChart />
       </Container>
     </main>
   );

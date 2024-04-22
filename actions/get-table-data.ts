@@ -7,6 +7,9 @@ export async function getTableData(): Promise<CryptoCurrencyPrice[]> {
   try {
     const response = await fetch(url, {
       cache: "no-store",
+      // next: {
+      //   revalidate: 0,
+      // },
     });
     if (!response.ok) {
       throw new Error(`Failed to fetch data: ${response.status}`);
